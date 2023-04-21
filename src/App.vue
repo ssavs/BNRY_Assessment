@@ -1,10 +1,17 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
+  <NavBar />
   <router-view/>
+  <FooterComp/>
 </template>
+
+<script>
+import NavBar from "@/components/NavBar.vue";
+import FooterComp from "@/components/FooterComp.vue";
+
+export default {
+  components: { NavBar, FooterComp },
+};
+</script>
 
 <style>
 #app {
@@ -12,7 +19,12 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  min-height: 100vh;
+  /* background-color:#825938; */
+  background-image:url(https://i.postimg.cc/bNNWHLdy/absolutvision-WYd-Pk-Ca1-BY-unsplash.jpg);
+  background-repeat: no-repeat;
+background-size: cover;
+overflow-x: hidden;
 }
 
 nav {
@@ -21,10 +33,12 @@ nav {
 
 nav a {
   font-weight: bold;
-  color: #2c3e50;
+  font-size: x-large;
+  color: #000000;
 }
 
 nav a.router-link-exact-active {
-  color: #42b983;
+ 
+  color:rgb(255, 8, 0);
 }
 </style>
