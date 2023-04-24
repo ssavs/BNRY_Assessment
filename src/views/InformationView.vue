@@ -1,5 +1,6 @@
 <template>
 <div class="container">
+  <h1>INFORMATION</h1>
   <h3>Search Articles</h3>
   <form class="d-flex" style="margin-top: 2rem;">
      
@@ -81,6 +82,10 @@ computed:{
     color: rgb(225, 14, 14);
     font-weight: bolder;
   }
+
+  h1{
+    font-weight: bolder;
+  }
   
   .author{
     color:rgb(0, 0, 0);
@@ -119,5 +124,47 @@ computed:{
     background-color: rgb(255, 255, 255);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5), 0 1px 2px rgba(0, 0, 0, 0.5);
     margin-bottom: 3rem;
+  }
+  @media (max-width: 1200px){
+    .col-sm-4{
+      height: 10rem;
+      width: 10rem;
+    }
+    .card-body{
+      width: auto;
+    }
+    .col-sm-8{
+      width: auto;
+    }
+  }
+  @media (max-width: 770px) {
+    .row{
+      display: flex;
+      flex-direction: column;
+    }
+
+    .col-sm-4{
+      height: 10rem;
+      width: 10rem;
+    };
+    .card{
+      width: 15rem;
+      height: 15rem;
+    }
+  }
+  @media (max-width:400px){
+    .row{
+      display: flex;
+      flex-direction: column;
+    }
+
+    .col-sm-4{
+      height: 10rem;
+      width: 10rem;
+    };
+    .card{
+      width: 15rem;
+      height: 15rem;
+    }
   }
   </style>

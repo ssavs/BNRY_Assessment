@@ -1,7 +1,6 @@
 <template >
-<img src="https://i.postimg.cc/SRYjKKKX/White-Grey-Dark-Blue-Light-Professional-General-News-Logo-removebg-preview.png">
-    
-  
+<img src="https://i.postimg.cc/SRYjKKKX/White-Grey-Dark-Blue-Light-Professional-General-News-Logo-removebg-preview.png" 
+class="img-fluid d-flex align-items-center">
 </template>
 <script>
 export default {
@@ -19,4 +18,6 @@ width: 45rem;
     overflow: hidden;
     overflow-x: hidden;
   }
+
+
 </style>

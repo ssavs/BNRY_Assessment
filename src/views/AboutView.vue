@@ -1,6 +1,8 @@
 <template >
 <div class="container">
 
+<h1>ABOUT</h1>
+
 <h4>
   Welcome to New To News, where we strive to bring you the latest and most accurate news from around the world. 
   Our team of experienced journalists works tirelessly to gather and report on breaking news, current events, and in-depth features that matter to you.
@@ -59,6 +61,10 @@ h4{
   font-size: x-large;
 }
 
+H1{
+  font-weight: bolder;
+}
+
 h3{
   color:rgb(234, 22, 14);
 font-weight: bolder;
@@ -69,6 +75,7 @@ font-weight: bolder;
   background-color: rgba(255, 255, 255, 0.505);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5), 0 1px 2px rgba(0, 0, 0, 0.5);
   margin-top: 5rem;
+  margin-bottom: 5rem;
 }
   
 </style>
