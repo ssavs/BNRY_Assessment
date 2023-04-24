@@ -1,9 +1,8 @@
 <template>
     <nav class="navbar navbar-expand-lg navbar-dark bar">
-        <!-- <img src="https://i.postimg.cc/rpCnc0fp/Tech-Crunch-Logo-2011-removebg-preview.png" alt="Logo" width="150" height="60" class="d-inline-block align-text-top"> -->
-    <div class="container-fluid" style="flex-direction: column;">
+    <div class="container-fluid" style="flex-direction: column;align-items: center;justify-content: center;">
       <button
-        class="navbar-toggler d-flex"
+        class="navbar-toggler d-flex d-none-lg"
         type="button"
         data-bs-toggle="collapse"
         data-bs-target="#navbarNav"
@@ -35,6 +34,12 @@
               aria-current="page"
               ><RouterLink to="/info">Information</RouterLink></a>
           </li>
+          <li class="nav-item">
+            <a
+              class="nav-link active"
+              aria-current="page"
+              ><RouterLink to="/contact">Contact</RouterLink></a>
+          </li>
         </ul>
       </div>
       </div>
@@ -55,7 +60,11 @@ a{
     text-decoration: none;
 }
 
-    
+    .bar{
+      color:rgb(225, 14, 14);
+      font-weight: bold;
+      
+    }
 </style>
 
 

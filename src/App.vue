@@ -15,16 +15,17 @@ export default {
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family:'Display';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  min-height: 100vh;
+  height: 100vh;
   /* background-color:#825938; */
   background-image:url(https://i.postimg.cc/bNNWHLdy/absolutvision-WYd-Pk-Ca1-BY-unsplash.jpg);
   background-repeat: no-repeat;
 background-size: cover;
 overflow-x: hidden;
+/* overflow-y: hidden; */
 }
 
 nav {

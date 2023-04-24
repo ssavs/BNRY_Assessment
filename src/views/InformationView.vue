@@ -1,17 +1,23 @@
 <template>
 <div class="container">
-    <div class="col-md-4 mt-4" v-for="article in articles" :key="article.id">
-  <div class="card" style="width:80rem; height:21rem">
+  <h3>Search Articles</h3>
+  <form class="d-flex" style="margin-top: 2rem;">
+     
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" v-model="Results">
+        <button class="btn btn-outline-primary" type="submit">Search</button>
+      </form>
+    <div class="col-md-4 mt-4" v-for="article in search" :key="article.id">
+
+  <div class="card" style="width:80rem; height:23rem">
     <div class="row g-0">
       <div class="col-sm-4">
         <img :src="article.urlToImage" class="" alt="..."
-      style="width:26rem ; height:21rem ;">
+      style="width:26rem ; height:23rem ;">
       </div>
       <div class="col-sm-8">
         <div class="card-body">
             <h2 class="h2">{{ article.title }}</h2>
-          <h4 class="author">{{ article.author }}</h4> 
-         <!-- <a class="url">{{ article.url }}</a> -->
+          <h4 class="author">{{ article.author }}</h4>
           <h5 class="card-title">
             <a class="link-dark text-decoration-none" href="" target="_blank"></a>
           </h5>
@@ -26,30 +32,6 @@
     </div>
   </div>
 </div>
-
-
-        <!-- <div class="container">
-            <div class="row">
-                <div class="col-md-4 mt-4" v-for="article in articles" :key="article.id">
-                    <div class="card" style="width: 25rem; height: 46rem;">
-                        <h3 class="card-title cards">{{ article.name }}</h3>
-                        <div class="img">
-                            <img :src="article.urlToImage" class="card-img-top" style="height:12rem;max-width: 26rem" />
-                        </div>
-                        <div class="card-body">
-                            <h2 class="h2">{{ article.title }}</h2>
-                              <p class="author">{{ article.author }}</p>
-                              <a class="url">{{ article.url }}</a>
-                            <p class="paragraph">{{ article.description }}</p>
-                            <p class="content">{{ article.content }}</p>
-                                <p class="time">{{ article.publishedAt}}</p>
-                              
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
     </div>
   </template>
   
@@ -58,7 +40,14 @@
   import { useStore } from 'vuex';
   
   export default {
-    setup() {
+
+data() {
+  return{
+    Results:'',
+    articles:[]
+  }
+},
+  setup() {
         const store = useStore();
         store.dispatch('fetchArticles');
         const articles = computed(() =>
@@ -67,8 +56,16 @@
         return {
             articles,
         }
-    }
+    },
+
+computed:{
+  search:function(){
+    return this.articles.filter((article) => {
+      return article.content.toLowerCase().match(this.Results.toLowerCase())
+    });
   }
+  }
+};
   </script>
   
   <style scoped>
@@ -82,11 +79,13 @@
     margin-top: 1rem;
     font-size:x-large;
     color: rgb(225, 14, 14);
-    font-weight: bold;
+    font-weight: bolder;
   }
   
   .author{
-    color:rgb(0, 0, 0) ;
+    color:rgb(0, 0, 0);
+    font-weight: bold;
+    font-size: large;
   }
   
 .pill{
@@ -111,8 +110,14 @@
   .url{
     margin-bottom: 1rem;
   }
+
+  h3{
+    color: white;
+  }
   
   .card{
     background-color: rgb(255, 255, 255);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5), 0 1px 2px rgba(0, 0, 0, 0.5);
+    margin-bottom: 3rem;
   }
   </style>

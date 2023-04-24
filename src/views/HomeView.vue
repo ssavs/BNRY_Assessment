@@ -12,7 +12,11 @@ export default {
 img{
 float: left;
 width: 45rem;
-
 }
   
+  .body{
+    overflow-y: hidden;
+    overflow: hidden;
+    overflow-x: hidden;
+  }
 </style>
